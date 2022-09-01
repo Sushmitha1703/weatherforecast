@@ -9,7 +9,7 @@ const inputsearch=document.querySelector('input')
 let target ='delhi'
 const fetchdata=async(target)=>{
     try{
-    const url=`https://api.weatherapi.com/v1/current.json?key=15a97f155d6043149a8103638223108&q=${target}`
+    const url=`http://api.weatherapi.com/v1/current.json?key=15a97f155d6043149a8103638223108&q=${target}`
     const response= await fetch(url);
     const data=await response.json();
     console.log(data)
@@ -29,7 +29,7 @@ const fetchdata=async(target)=>{
 function update(temp,location,icon,text,time){
     degree.innerHTML=`${temp}&deg`
     place.innerHTML=location
-    symbol.src=`https://${icon}`
+    symbol.src=`http://${icon}`
     const correctdate=time.split(" ")[0]
     const correctTime=time.split(" ")[1]
     const daynum=new Date(correctdate).getDay()
